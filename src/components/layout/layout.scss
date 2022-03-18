@@ -1,0 +1,90 @@
+body {
+  .ant-layout-sider {
+    position: relative;
+    min-width: 0;
+    background: #505050;
+    transition: all 0.2s;
+  }
+  .ant-menu.ant-menu-dark,
+  .ant-menu-dark .ant-menu-sub,
+  .ant-menu.ant-menu-dark .ant-menu-sub {
+    color: rgba(255, 255, 255, 0.65);
+    background: #505050;
+  }
+
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #1890ff;
+  }
+  .ant-card {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', 'tnum';
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 2px;
+  }
+
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 12px 16px;
+    color: white;
+    line-height: 1.5715;
+    cursor: pointer;
+    transition: all 0.3s, visibility 0s;
+    background-color: #1a1a1a;
+  }
+
+  .ant-collapse-content {
+    color: #fff;
+    background-color: #505050;
+    border-top: none;
+  }
+}
+.logo {
+  height: 77px;
+  margin: 16px;
+  background-image: url(../../../public/Images/panda.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 80%;
+}
+
+.top-header {
+  padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 27;
+  transition: width 0.2s;
+  box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
+}
+
+.user-profile {
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0s;
+  color: #fff;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}

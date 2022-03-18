@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.css';
+import HomeLayout from './components/layout';
 
-function App() {
-  return (
-    <div />
-  );
-}
+const App = () => <HomeLayout notificationsLength={2} />;
 
 export default App;
