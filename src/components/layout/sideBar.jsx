@@ -1,10 +1,10 @@
 import React from 'react';
-
 import {
-  HomeOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined,
+  LogoutOutlined, MessageOutlined, PlusCircleOutlined, QuestionCircleOutlined, SettingOutlined, SlidersFilled,
 } from '@ant-design/icons';
 import { Icon as LegacyIcon } from '@ant-design/compatible';
-import { Layout, Menu } from 'antd';
+import { Badge, Layout, Menu } from 'antd';
+import { PropTypes } from 'prop-types';
 import './layout.scss';
 
 const { Sider } = Layout;
@@ -28,22 +28,43 @@ const Sidebar = ({ collapsed, notificationsLength, toggle }) => (
       className="trigger"
       type={collapsed ? 'menu-unfold' : 'menu-fold'}
       onClick={toggle}
-      style={{ float: 'right', margin: 'auto' }}
     />
-    <div className={!collapsed && 'logo'} />
 
+    <div className={!collapsed ? 'logo' : ''} />
+    <hr />
     <Menu theme="dark" mode="inline">
-      <Menu.Item key="1" icon={<UserOutlined />}>
-        nav 1
+      <Menu.Item key="0" icon={<SlidersFilled />}>
+        Sites
       </Menu.Item>
-      <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-        nav 2
+      <Menu.Item key="1" icon={<PlusCircleOutlined />}>
+        UPLOAD NEW DATA
       </Menu.Item>
-      <Menu.Item key="3" icon={<UploadOutlined />}>
-        nav 3
+      <Menu.Item key="2" icon={<SettingOutlined />}>
+        Request Flight
+      </Menu.Item>
+      <Menu.Item key="3" icon={<MessageOutlined className={collapsed ? 'notification-icon' : ''} />}>
+        <Badge count={notificationsLength}>
+          Notifications
+        </Badge>
+
+      </Menu.Item>
+      <Menu.Item key="4" icon={<QuestionCircleOutlined />}>
+        Support
+      </Menu.Item>
+      <Menu.Item key="5" icon={<LogoutOutlined />}>
+        Logout
       </Menu.Item>
     </Menu>
   </Sider>
 );
 
+Sidebar.propTypes = {
+  notificationsLength: PropTypes.number,
+  collapsed: PropTypes.bool,
+};
+
+Sidebar.defaultProps = {
+  collapsed: false,
+  notificationsLength: 0,
+};
 export default Sidebar;
