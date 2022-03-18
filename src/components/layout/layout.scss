@@ -1,4 +1,5 @@
 body {
+  /*Overwrite ant design menu bar*/
   .ant-layout-sider {
     position: relative;
     min-width: 0;
@@ -15,21 +16,8 @@ body {
   .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #1890ff;
   }
-  .ant-card {
-    box-sizing: border-box;
-    margin: 20px;
-    padding: 0;
-    color: white;
-    font-size: 14px;
-    font-variant: tabular-nums;
-    line-height: 1.5715;
-    list-style: none;
-    font-feature-settings: 'tnum', 'tnum';
-    position: relative;
-    background: #1a1a1a;
-    border-radius: 2px;
-  }
 
+  /*Overwrite ant design collapse bar*/
   .ant-collapse > .ant-collapse-item > .ant-collapse-header {
     position: relative;
     display: flex;
@@ -48,10 +36,107 @@ body {
     background-color: #505050;
     border-top: none;
   }
+
+  /*Overwrite ant design Upload styling*/
+  .ant-upload-drag-icon {
+    background-color: #505050;
+    color: #fff;
+  }
+
+  .ant-upload {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', 'tnum';
+    outline: 0;
+    background-color: #505050;
+  }
+
+  .ant-upload-drag-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
+    background: #505050;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+    color: #fff;
+    font-size: 48px;
+  }
+
+  /*Overwrite ant design Card styling(Displays notification messages in numbers)*/
+  .ant-badge-count,
+  .ant-badge-dot,
+  .ant-badge .ant-scroll-number-custom-component {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transform-origin: 100% 0%;
+    margin-right: -51px;
+    margin-top: 7px;
+  }
+
+  .ant-badge {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', 'tnum';
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  /*Overwrite ant design Card styling*/
+  .ant-card {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', 'tnum';
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 2px;
+  }
+  .ant-card-body {
+    padding: 0px;
+  }
+
+  .ant-card-head-title {
+    display: inline-block;
+    flex: 1 1;
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+  }
 }
+
+/*Company Logo styling on the sidebar*/
 .logo {
-  height: 77px;
-  margin: 16px;
+  height: 132px;
+  margin: 18px;
   background-image: url(../../../public/Images/panda.png);
   background-size: contain;
   background-position: center center;
@@ -59,23 +144,7 @@ body {
   border-radius: 80%;
 }
 
-.top-header {
-  padding: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 27;
-  transition: width 0.2s;
-  box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
-}
-
-.user-profile {
-  float: right;
-  margin-right: 20px;
-  cursor: pointer;
-  margin-left: auto;
-}
-
+/*Legacy Icon styling*/
 .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -83,8 +152,37 @@ body {
   cursor: pointer;
   transition: color 0s;
   color: #fff;
+  float: right;
 }
 
 .trigger:hover {
   color: #1890ff;
+  float: 'right';
+  margin: 'auto';
+}
+
+/* Notification Icon styling*/
+.notification-icon {
+  color: 'red';
+}
+
+/*Layout Styling*/
+.layout-styling-collapsed {
+  margin-left: 80px;
+  padding-top: 10px;
+  background-color: #1a1a1d;
+}
+
+.layout-collapsed {
+  margin-left: 200px;
+  padding-top: 10px;
+  background-color: #1a1a1d;
+}
+
+/*Content Styling*/
+.content-styling {
+  padding-top: 0px;
+  padding-left: 10px;
+  min-height: 780px;
+  background-color: #1a1a1d;
 }
