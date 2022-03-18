@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import {
-  Layout, Avatar, Col, Card, Row,
-} from 'antd';
-
-import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { Layout, Col, Row } from 'antd';
+import { PropTypes } from 'prop-types';
 import Sidebar from './sideBar';
 import Uploads from './collapse';
+import GoogleMapComponent from '../maps';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 const HomeLayout = ({ notificationsLength }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -24,24 +22,14 @@ const HomeLayout = ({ notificationsLength }) => {
         toggle={toggle}
       />
       <Layout
-        className="main-layout"
-        style={
-        collapsed
-          ? { marginLeft: '80px', paddingTop: '10px', backgroundColor: '#1a1a1d' }
-          : { marginLeft: '200px', paddingTop: '10px', backgroundColor: '#1a1a1d' }
-      }
+        className={collapsed ? 'layout-styling-collapsed' : 'layout-collapsed'}
       >
         <Content
-          style={{
-            paddingTop: 0,
-            paddingLeft: 24,
-            minHeight: 780,
-            backgroundColor: '#1a1a1d',
-          }}
+          className="content-styling"
         >
           <Row>
             <Col flex="0 1 300px"><Uploads /></Col>
-            <Col flex="1 1 200px"><Uploads /></Col>
+            <Col flex="1 1 200px"><GoogleMapComponent /></Col>
           </Row>
 
         </Content>
@@ -50,4 +38,11 @@ const HomeLayout = ({ notificationsLength }) => {
   );
 };
 
+HomeLayout.propTypes = {
+  notificationsLength: PropTypes.number,
+};
+
+HomeLayout.defaultProps = {
+  notificationsLength: 0,
+};
 export default HomeLayout;
