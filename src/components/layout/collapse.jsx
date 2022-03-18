@@ -37,11 +37,15 @@ const Uploads = () => {
           <p className="ant-upload-drag-icon">
             <InboxOutlined height={100} />
           </p>
+          <p className="ant-upload-hint">
+            Acceptable file formats:
+            .jpeg, .tif, .tiff, .jpg, jpeg-2000, .zip
+          </p>
           <Space>
-            <Upload {...props}>
+            <Upload {...props} multiple accept=".jpeg, .tif, .tiff, .jpg, jpeg-2000">
               <Button size="small" shape="round" type="danger">UPLOAD PHOTOS</Button>
             </Upload>
-            <Upload {...props}>
+            <Upload {...props} accept=".zip" multiple>
               <Button size="small" shape="round" type="danger">UPLOAD ZIP</Button>
             </Upload>
 
