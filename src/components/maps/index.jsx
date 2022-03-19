@@ -32,7 +32,6 @@ const GoogleMapComponent = () => {
   }, []);
 
   const {
-    ready,
     suggestions: { data },
     setValue,
     clearSuggestions,
