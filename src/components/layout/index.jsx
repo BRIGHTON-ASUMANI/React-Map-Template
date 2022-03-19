@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Layout, Col, Row } from 'antd';
-import { PropTypes } from 'prop-types';
 import Sidebar from './sideBar';
 import Uploads from './collapse';
 import GoogleMapComponent from '../maps';
+import AppContext from '../../context/appContext';
 
 const { Content } = Layout;
 
-const HomeLayout = ({ notificationsLength }) => {
+const HomeLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { notificationsLength } = useContext(AppContext);
+
   const toggle = () => {
     setCollapsed(!collapsed);
   };
@@ -38,11 +40,4 @@ const HomeLayout = ({ notificationsLength }) => {
   );
 };
 
-HomeLayout.propTypes = {
-  notificationsLength: PropTypes.number,
-};
-
-HomeLayout.defaultProps = {
-  notificationsLength: 0,
-};
 export default HomeLayout;
